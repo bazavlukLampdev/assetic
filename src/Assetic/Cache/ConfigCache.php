@@ -39,7 +39,7 @@ class ConfigCache
      */
     public function has($resource)
     {
-        return file_exists($this->getSourcePath($resource));
+        return file_exists($this->getSourcePath($resource)) && (!file_get_contents($this->getSourcePath($resource)));
     }
 
     /**
